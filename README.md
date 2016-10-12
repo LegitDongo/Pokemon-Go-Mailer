@@ -27,8 +27,6 @@ in the command line when you are looking at the directory of the project.
 
 According to https://github.com/googlemaps/google-maps-services-js you can get the javascript Google Maps API by using `npm install @google/maps` but I've never got that to work. So instead, I just use `npm install https://github.com/googlemaps/google-maps-services-js`
 
-The program assumes that it is running in the root of the pokemon go maps project. To change this, change references appropriately.
-
 The email that is going to be sending emails probably needs to have the "Allow Less Secure Apps to Access" setting on.
 Read more here: https://support.google.com/accounts/answer/6010255?hl=en
 
@@ -38,20 +36,22 @@ You will have to add this app to the list of webhooks for your pokemon go maps i
     You have to have the "http://" in front of the url.
     Remember to have the appropriate port here if it's set to something else than default.
 
-A few things will have to be changed with your version of this program until I get these things changed here.
+Copy config.example.ini to config.ini and change the following items
 
-1. The "wanted" variable is a list of pokemon ID's (according to the global pokedex) that you want to have an email sent to you about.
-  It is not enough to have the "hide pokemon" list full of what you don't want to see or the "notify pokemon" list full of what you want to be notified about in the web application of pokemon go maps.
+1. The "wantedlist" is a list of pokemon ID's (according to the global pokedex) that you want to have an email sent to you about.
   
-2. Your username/password/sendtoemail needs to be put into the username/password/sendTo variables, respectively.
+2. Your username/password/send to email needs to be put into the username/password/sendto parts, respectively.
 
-3. Put your own Google Maps API key into the line that has:
-```javascript
-require('@google/maps').createClient({ key: 'YOUR API KEY HERE' });
-```
+3. Put your own Google Maps API key into the APIkey section
+
+Some optional settings
+
+1. root - When this program is not in the root of the Pokemon Go Maps program, enter the path to the root of it.
+
+2. port - When you don't want to run this server on port 9876, enter the port you wish to run on here. Warning! There is no check to see if that port is free.
 
 # Run
-To start this, navigate to the project root in command line, and use `node pogomailer.js` to start it.
+To start this, navigate to this project's root in command line, and use `node pogomailer.js` to start it.
 
 That's it.
 
