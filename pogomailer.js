@@ -1,5 +1,5 @@
 var fs = require('fs');
-var config = fs.readFileSync('./config.ini', 'utf8').toString();
+var config = fs.readFileSync('./pogomailer.config.ini', 'utf8').toString();
 config = config.split(' ').join('');
 config = config.replace(/\s*[#;].+$/gm, '');
 config = config.split(/\r?\n/);

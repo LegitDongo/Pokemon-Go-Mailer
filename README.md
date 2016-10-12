@@ -35,8 +35,10 @@ You will have to add this app to the list of webhooks for your pokemon go maps i
   An example of this (in the case of running on the same machine) would be `webhook: http://127.0.0.1:9876`
     You have to have the "http://" in front of the url.
     Remember to have the appropriate port here if it's set to something else than default.
+    
+The pogomailer.config.ini has to be in the same folder as the pogomailer.js program.
 
-Copy config.example.ini to config.ini and change the following items
+Copy pogomailer.config.example.ini to pogomailer.config.ini and change the following items
 
 1. The "wantedlist" is a list of pokemon ID's (according to the global pokedex) that you want to have an email sent to you about.
   
